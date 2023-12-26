@@ -1,0 +1,150 @@
+
+
+//+------------------------------------------------------------------+
+//|                                               Williams Wizard.mq5 |
+//|                        Copyright 2021, Forex Robot Easy Team     |
+//|                                https://www.forexroboteasy.com     |
+//+------------------------------------------------------------------+
+#property copyright 'Copyright 2021, Forex Robot Easy Team'
+#property link      'https://www.forexroboteasy.com'
+#property version   '1.00'
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Add initialization code here
+
+    return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Add deinitialization code here
+}
+
+//+------------------------------------------------------------------+
+//| Expert start function                                            |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Add trading logic here
+    double currentPrice = SymbolInfoDouble(_Symbol, SYMBOL_BID);
+    double stopLoss = currentPrice - 0.001; // Set stop loss 10 pips below current price
+    double takeProfit = currentPrice + 0.001; // Set take profit 10 pips above current price
+
+    // Check for potential buying opportunity
+    if (CheckBuyOpportunity())
+    {
+        // Execute buy trade
+        ExecuteBuyTrade(stopLoss, takeProfit);
+    }
+
+    // Check for potential selling opportunity
+    if (CheckSellOpportunity())
+    {
+        // Execute sell trade
+        ExecuteSellTrade(stopLoss, takeProfit);
+    }
+}
+
+//+------------------------------------------------------------------+
+//| Check for potential buying opportunity                            |
+//+------------------------------------------------------------------+
+bool CheckBuyOpportunity()
+{
+    // Add buy opportunity checking logic here
+    return true; // Placeholder, replace with actual logic
+}
+
+//+------------------------------------------------------------------+
+//| Check for potential selling opportunity                           |
+//+------------------------------------------------------------------+
+bool CheckSellOpportunity()
+{
+    // Add sell opportunity checking logic here
+    return true; // Placeholder, replace with actual logic
+}
+
+//+------------------------------------------------------------------+
+//| Execute buy trade                                                |
+//+------------------------------------------------------------------+
+void ExecuteBuyTrade(double stopLoss, double takeProfit)
+{
+    // Add buy trade execution logic here
+    Print('Buy trade executed with stop loss at ', stopLoss, ' and take profit at ', takeProfit);
+}
+
+//+------------------------------------------------------------------+
+//| Execute sell trade                                               |
+//+------------------------------------------------------------------+
+void ExecuteSellTrade(double stopLoss, double takeProfit)
+{
+    // Add sell trade execution logic here
+    Print('Sell trade executed with stop loss at ', stopLoss, ' and take profit at ', takeProfit);
+}
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Add trading logic here
+    double currentPrice = SymbolInfoDouble(_Symbol, SYMBOL_BID);
+    double stopLoss = currentPrice - 0.001; // Set stop loss 10 pips below current price
+    double takeProfit = currentPrice + 0.001; // Set take profit 10 pips above current price
+
+    // Check for potential buying opportunity
+    if (CheckBuyOpportunity())
+    {
+        // Execute buy trade
+        ExecuteBuyTrade(stopLoss, takeProfit);
+    }
+
+    // Check for potential selling opportunity
+    if (CheckSellOpportunity())
+    {
+        // Execute sell trade
+        ExecuteSellTrade(stopLoss, takeProfit);
+    }
+}
+
+//+------------------------------------------------------------------+
+//| Check for potential buying opportunity                            |
+//+------------------------------------------------------------------+
+bool CheckBuyOpportunity()
+{
+    // Add buy opportunity checking logic here
+    return true; // Placeholder, replace with actual logic
+}
+
+//+------------------------------------------------------------------+
+//| Check for potential selling opportunity                           |
+//+------------------------------------------------------------------+
+bool CheckSellOpportunity()
+{
+    // Add sell opportunity checking logic here
+    return true; // Placeholder, replace with actual logic
+}
+
+//+------------------------------------------------------------------+
+//| Execute buy trade                                                |
+//+------------------------------------------------------------------+
+void ExecuteBuyTrade(double stopLoss, double takeProfit)
+{
+    // Add buy trade execution logic here
+    Print('Buy trade executed with stop loss at ', stopLoss, ' and take profit at ', takeProfit);
+}
+
+//+------------------------------------------------------------------+
+//| Execute sell trade                                               |
+//+------------------------------------------------------------------+
+void ExecuteSellTrade(double stopLoss, double takeProfit)
+{
+    // Add sell trade execution logic here
+    Print('Sell trade executed with stop loss at ', stopLoss, ' and take profit at ', takeProfit);
+}
